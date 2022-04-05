@@ -7,8 +7,6 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/index' },
   ],
-  fastRefresh: {},
-  devServer:{
-    port:6666
-  }
+  fastRefresh: {}
+ 
 });
