@@ -10,5 +10,8 @@ export default defineConfig({
   fastRefresh: {},
   devServer:{
     port:6789
+  },
+  qiankun:{
+    slave:{}
   }
 });
