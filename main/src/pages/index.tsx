@@ -6,6 +6,7 @@ export default function IndexPage(props:any) {
     <>
       <div className={styles.container}>
         <AsideMenu/>
+        <div>{props.children}</div>
         {/* 微应用节点 */}
         <div id='microContainer'></div>
       </div>
