@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "211fd9cd-32ad-4183-b328-b5dda28f4e30"
+    "analytics": "9c97ed93-4c6c-4bdc-8ffa-02f86dd99f15"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -21,7 +21,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/micro-angular",
             "index": "src/index.html",
@@ -36,7 +36,10 @@
             "styles": [
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+                "path": "./custom-webpack.config.js"
+              }
           },
           "configurations": {
             "production": {
@@ -72,7 +75,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "micro-angular:build:production"
