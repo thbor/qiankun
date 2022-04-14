@@ -17,7 +17,9 @@ export const rewriteRoute = () => {
     console.log('popstate',val);
     preRoute = nextRoute;  //之前的
     nextRoute = window.location.pathname; //最新的
-    handleRouter();
+    if(preRoute !==nextRoute){
+      handleRouter();
+    }
   })
 
   // pushState和replaceState需要通过劫持的方式重写
@@ -28,7 +30,9 @@ export const rewriteRoute = () => {
     newPushState.apply(window.history,args);
     nextRoute = window.location.pathname
     console.log('监视到pushState变化了')
-    handleRouter();
+    if(preRoute !==nextRoute){
+      handleRouter();
+    }
   }
   const newReplaceState = window.history.replaceState;
   window.history.replaceState = (...args) => {
@@ -37,6 +41,8 @@ export const rewriteRoute = () => {
     newReplaceState.apply(window.history,args);
     nextRoute = window.location.pathname
     console.log('监视到replaceState变化了')
-    handleRouter();
+    if(preRoute !==nextRoute){
+      handleRouter();
+    }
   }
 }

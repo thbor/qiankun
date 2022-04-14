@@ -1,8 +1,6 @@
+import {fetchResource} from './fetchResource'
 export const myImportHtmlEntry = async(entryUrl:string)=>{
-   // 加载app（获取entry的html，把html加在container里面）
-  const getResByUrl = async(url:string)=> await fetch(url).then((res)=>res.text());
-  // const html = await getResByUrl(entryUrl);
-  const template = await getResByUrl(entryUrl)
+  const template = await fetchResource(entryUrl)
   
   const templateDom = document.createElement('div');
   templateDom.innerHTML = template;
@@ -16,15 +14,21 @@ export const myImportHtmlEntry = async(entryUrl:string)=>{
       }
       return `${entryUrl}/${src}`
     }
-    const res = Promise.all(scripts.map(async (script,index)=>{
-      const src = script.getAttribute('src');
+    const allScripts = scripts.map(async (script,index)=>{
+      let src = script.getAttribute('src');
+      
       if(!src){
         return script.innerHTML;
       }else{
         const url = getSrcURL(src);
-        return await getResByUrl(url);
+        script.src = url
+        return await fetchResource(url);
       }
-    }))
+    })
+    console.log('allScripts',allScripts);
+    
+    const res = Promise.all(allScripts)
+    
     return res
   }
 
@@ -34,11 +38,12 @@ export const myImportHtmlEntry = async(entryUrl:string)=>{
     const exports = module.exports;
     const allScripts = await getExternalScripts();
     allScripts.forEach((code:string)=>{
-      eval(code);
+       eval(code);
     })
     // eval执行后会将module.exports的值覆盖
-    // console.log(111,window['micro-umi-umi']);
     return module.exports;
   }
-  return {template,execScripts,getExternalScripts};
+ 
+  return {template,execScripts,getExternalScripts,};
+   
 }

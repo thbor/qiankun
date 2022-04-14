@@ -8,7 +8,10 @@ const AsideMenu=()=>{
   const menus:IMenu[] = [
     {path:'/micro-vue',name:'micro-vue'},
     {path:'/micro-umi',name:'micro-umi'},
-    {path:'/micro-angular',name:'micro-angular'},
+    {path:'/micro-angular/',name:'micro-angular/'},
+    {path:'/angular9',name:'angular9'},
+    // {path:'/app-angular',name:'app-angular'},
+    
   ]
   const handleClick=(menuItem: IMenu)=>{
     history.push(menuItem.path);

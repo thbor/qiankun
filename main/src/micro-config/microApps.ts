@@ -15,6 +15,18 @@ export const microApps = [
     name: 'micro-angular',
     entry: 'http://localhost:4200',
     container: '#microContainer',
-    activeRule: '/micro-angular',
-  }
+    activeRule: '/micro-angular/',
+  },
+  {
+    name: 'angular9',
+    entry: 'http://localhost:7103',
+    container: '#microContainer',
+    activeRule: '/angular9',
+  },
+  // {
+  //   name: 'angularspa',
+  //   entry: 'http://localhost:51206',
+  //   container: '#microContainer',
+  //   activeRule: '/app-angular',
+  // }
 ]
