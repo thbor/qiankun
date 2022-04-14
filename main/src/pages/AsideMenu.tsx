@@ -9,7 +9,6 @@ const AsideMenu=()=>{
     {path:'/micro-vue',name:'micro-vue'},
     {path:'/micro-umi',name:'micro-umi'},
     {path:'/micro-angular/',name:'micro-angular/'},
-    {path:'/angular9',name:'angular9'},
     // {path:'/app-angular',name:'app-angular'},
     
   ]

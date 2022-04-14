@@ -8,7 +8,7 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   // @ts-ignore
-  providers: [{ provide: APP_BASE_HREF, useValue: window.__POWERED_BY_QIANKUN__ ? '/micro-angular' : '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: window.__POWERED_BY_QIANKUN__ ? '/micro-angular' : '/angular-assets' }],
 
 })
 export class AppRoutingModule { }

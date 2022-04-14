@@ -13,7 +13,7 @@ export const microApps = [
   },
   {
     name: 'micro-angular',
-    entry: 'http://localhost:4200',
+    entry: 'http://localhost:4200/angular-assets/',
     container: '#microContainer',
     activeRule: '/micro-angular/',
   },

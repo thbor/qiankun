@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "baseHref":"/angular-assets/",
             "outputPath": "dist/micro-angular",
             "index": "src/index.html",
             "main": "src/main.ts",

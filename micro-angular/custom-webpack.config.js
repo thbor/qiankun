@@ -7,7 +7,6 @@ module.exports = {
     },
   },
   output: {
-    publicPath:'http://localhost:4200',
     library: `${appName}-[name]`,
       libraryTarget: 'umd',
       chunkLoadingGlobal: `webpackJsonp_${appName}`,
