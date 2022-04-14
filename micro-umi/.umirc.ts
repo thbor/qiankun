@@ -13,5 +13,9 @@ export default defineConfig({
   },
   qiankun:{
     slave:{}
-  }
+  },
+  // 指定给root为根节点
+  mountElementId:'root1'
+
+  
 });

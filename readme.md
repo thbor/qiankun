@@ -115,3 +115,13 @@ export const qiankun = {
 }
 ```
 
+umi应用直接导航过去而不是加载子应用的container内是因为加载子应用时
+会去找id为root的dom节点。这个节点与主应用的root节点重复了
+解决方案1.更换主应用或子应用的id为不一样的两个id
+解决方案2.父应用加载子应用时指定在某个dom内寻找id
+
+
+
+
+图片加载不出来：
+将vue的vue.config.js里面增加publicPath,这样就能完整请求出图片的资源了

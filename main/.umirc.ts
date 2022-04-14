@@ -7,6 +7,7 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/index',routes:[]},
   ],
-  fastRefresh: {}
+  fastRefresh: {},
+  mountElementId:'root2'
  
 });
