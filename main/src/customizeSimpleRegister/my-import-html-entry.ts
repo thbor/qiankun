@@ -37,10 +37,12 @@ export const myImportHtmlEntry = async(entryUrl:string)=>{
     const module = {exports:{}}
     const exports = module.exports;
     const allScripts = await getExternalScripts();
-    allScripts.forEach((code:string)=>{
-       eval(code);
+    allScripts.forEach(async (code:string)=>{
+       await eval(code);
     })
     // eval执行后会将module.exports的值覆盖
+    console.log('module.exports',module.exports,module);
+    
     return module.exports;
   }
  

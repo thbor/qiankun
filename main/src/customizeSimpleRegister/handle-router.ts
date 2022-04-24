@@ -29,14 +29,16 @@ export const handleRouter = async ()=>{
   // @ts-ignore
   window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__ = `${nextApp.entry}/`;
 
-  // 执行scripts代码
+  if(container) container.innerHTML = template
+
+  // // 执行scripts代码
   const microApp:any = await execScripts();
   // console.log('micro-angular-main',window['micro-angular-main']);
   
-  if(container) container.innerHTML = template
 
-  // 生命周期
-
+  // // 生命周期
+  // console.log('microApp',microApp);
+  
   nextApp.bootstrap = microApp?.bootstrap
   nextApp.mount = microApp?.mount
 

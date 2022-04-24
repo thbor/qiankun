@@ -4,3 +4,15 @@
 .container{
   display: flex;
 }
+.my-class{
+  :global{
+    .base-input{
+      background-color: red;
+    }
+  }
+}
+:global{
+  button.ant-btn{
+    background-color: red;
+  }
+}
